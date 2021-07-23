@@ -1,0 +1,5 @@
+docker stop app
+docker stop mysql
+docker stop nginx
+
+docker system prune
