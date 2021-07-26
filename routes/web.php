@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\ShowPosts;
+use App\Http\Livewire\NoticiaForm;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard');*/
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', NoticiaForm::class)->name('dashboard');
+
+//Route::resource('/admin/posts', \App\Http\Controllers\Api\V1\PostController::class);
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+
+

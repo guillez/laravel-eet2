@@ -1,0 +1,7 @@
+    1  composer install
+    2  composer require laravel/jetstream
+    3  php artisan jetstream:install livewire
+    4  npm install && npm run dev
+    5  php artisan jetstream:install livewire --teams
+    6  npm install && npm run dev
+    7  php artisan migrate
