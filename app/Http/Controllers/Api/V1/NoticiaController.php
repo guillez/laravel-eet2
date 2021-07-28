@@ -47,13 +47,13 @@ class NoticiaController extends Controller
      * @param  App\Http\Requests\V1\PostRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(Request $request)
     {
 
         $request->validate([
             'titulo'=>'required|max:20',
             'descripcion'=>'required|max:255',
-            'estado'=>'creado'
+            'estado'=>'required'
         ]);
 
         $noticia = Noticia::create($request->all());
